@@ -23,7 +23,6 @@
   list-style: none;
   padding: 0;
   margin-top: 30px;
-  flex: 1;
 }
 
 .menu li {
@@ -41,5 +40,7 @@
   background: black;
   color: white;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
+  margin-top: 300px;
 }
