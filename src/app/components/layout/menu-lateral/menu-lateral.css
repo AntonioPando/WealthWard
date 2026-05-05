@@ -67,7 +67,6 @@
 .lista-navegacion__item{
 	display: flex;
 	flex-direction: column;
-	background-color:;
  }
 
 .enlace-menu{
@@ -89,8 +88,6 @@
 .enlace-menu__icono{
 	width:20px;
 }
-
-.enlace-menu__texto{ }
 
 .enlace-menu--activo{
 	background: #eef6fb;
