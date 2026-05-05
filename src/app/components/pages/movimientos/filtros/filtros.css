@@ -1,0 +1,9 @@
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tipo button {
+  margin-right: 5px;
+}

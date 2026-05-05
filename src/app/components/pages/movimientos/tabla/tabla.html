@@ -1,0 +1,27 @@
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Categoría</th>
+      <th>Descripción</th>
+      <th>Monto</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let m of movimientos">
+      <td>{{ m.fecha }}</td>
+      <td>{{ m.categoria }}</td>
+      <td>{{ m.descripcion }}</td>
+      <td [class.ingreso]="m.tipo === 'ingreso'"
+          [class.gasto]="m.tipo === 'gasto'">
+        {{ m.monto }}
+      </td>
+      <td>
+        <button>Editar</button>
+        <button>Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

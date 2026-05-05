@@ -1,0 +1,18 @@
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.ingreso {
+  color: green;
+}
+
+.gasto {
+  color: red;
+}
