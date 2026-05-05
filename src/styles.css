@@ -1,6 +1,6 @@
 /* Global CSS variables and responsive sidebar width */
 :root{
-	--sidebar-width: 20dvw;
+	--sidebar-width: 15dvw;
 }
 
 @media (max-width: 900px){
