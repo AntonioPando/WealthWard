@@ -12,8 +12,7 @@ import { Component } from '@angular/core';
 export class Tabla {
 
   pagina: number = 1;
-  itemsPorPagina: number = 5;
-  totalItems: number = 200;
+  itemsPorPagina: number = 7;
 
   get totalPaginas(){
     return Math.ceil(this.totalItems / this.itemsPorPagina);
@@ -21,13 +20,11 @@ export class Tabla {
 
 get paginas(): number[] {
   const total = this.totalPaginas;
-  const pages: number[] = [];
+  return Array.from({ length: total }, (_, i) => i + 1);
+}
 
-  for (let i = 1; i <= Math.min(5, total); i++) {
-    pages.push(i);
-  }
-
-  return pages;
+get totalItems() {
+  return this.movimientos.length;
 }
 
   irAPagina(pagina: number){
@@ -87,6 +84,48 @@ get paginas(): number[] {
       descripcion: 'Dividendos',
       monto: 200,
       tipo: 'ingreso'
-    }
+    },
+      {
+      fecha: '10 Oct, 2026',
+      categoria: 'Minorista',
+      descripcion: 'Compra Amazon',
+      monto: -89,
+      tipo: 'gasto'
+    },
+    {
+      fecha: '5 Oct, 2026',
+      categoria: 'Salario',
+      descripcion: 'Honorarios',
+      monto: 8500,
+      tipo: 'ingreso'
+    },
+    {
+      fecha: '1 Oct, 2026',
+      categoria: 'Entretenimiento',
+      descripcion: 'Spotify',
+      monto: -10,
+      tipo: 'gasto'
+    },
+     {
+      fecha: '28 Sep, 2026',
+      categoria: 'Transporte',
+      descripcion: 'Uber',
+      monto: -25,
+      tipo: 'gasto'
+    },
+    {
+      fecha: '25 Sep, 2026',
+      categoria: 'Inversiones',
+      descripcion: 'Dividendos',
+      monto: 200,
+      tipo: 'ingreso'
+    },
+     {
+      fecha: '20 Sep, 2026',
+      categoria: 'Minorista',
+      descripcion: 'Compra Zara',
+      monto: -150,
+      tipo: 'gasto'
+    },
   ];
 }
