@@ -1,1 +1,12 @@
+/* Global CSS variables and responsive sidebar width */
+:root{
+	--sidebar-width: 20dvw;
+}
+
+@media (max-width: 900px){
+	:root{
+		--sidebar-width: 20dvw; /* keep proportional on small screens */
+	}
+}
+
 /* You can add global styles to this file, and also import other style files */

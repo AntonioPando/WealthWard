@@ -1,7 +1,7 @@
 /* Estilos para la barra lateral de navegación */
 .barra-lateral{
 	position: fixed;
-	width: 20dvw;
+	width: var(--sidebar-width);
 	height: 100dvh;
 	display: flex;
 	flex-direction: column;
@@ -21,8 +21,8 @@
 }
 
 .logo-contenedor{
-	width:3.5dvw;
-	height:3.5dvw;
+	width:calc(var(--sidebar-width) * 0.175);
+	height:calc(var(--sidebar-width) * 0.175);
 	background: #0b1720;
 	border-radius:12px;
 	display:flex;
@@ -33,7 +33,7 @@
 }
 
 .logo-contenedor__logo{
-	width: 2dvw;
+	width: 60%;
 }
 
 
@@ -112,7 +112,7 @@
 }
 
 .boton-primario-accion{
-	width: 18dvw;
+	width: calc(var(--sidebar-width) * 0.9);
 	display:flex;
 	align-items:center;
 	justify-content:center;
