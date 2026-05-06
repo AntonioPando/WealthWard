@@ -1,8 +1,15 @@
 import { Routes } from '@angular/router';
 import { Movimientos } from './components/pages/movimientos/movimientos';
-import { Dashboard } from './components/pages/dashboard/dashboard';
+import { Perfil } from './components/pages/perfil/perfil';
 
 export const routes: Routes = [
-  { path: 'movimientos', component: Movimientos, title: 'Movimientos' },
-  { path: 'dashboard', component: Dashboard, title: 'Dashboard' },
+      {
+    path: 'movimientos',
+    component: Movimientos
+  },
+  { 
+    path: 'perfil',
+    component: Perfil
+  }
+
 ];
