@@ -1,131 +1,163 @@
-<div class="dashboard-grid">
+<main class="contenedor-principal">
 
   <!-- PERFIL -->
-  <section class="profile-card">
-    <div class="profile-main-info">
+  <section class="tarjeta-perfil">
+    <div class="contenido-perfil">
 
-      <div class="avatar-container">
-        <img src="user.svg" class="main-avatar" alt="Perfil">
-        <button class="btn-edit-icon">✎</button>
+      <div class="contenedor-avatar">
+        <img src="user.svg" class="imagen-perfil" alt="Perfil">
+        <button class="boton-editar-avatar">✎</button>
       </div>
 
-      <div class="text-info">
+      <div class="datos-usuario">
         <h2>Julian Alexander</h2>
         <p>julian.alexander@wealthguard.com</p>
 
-        <div class="badges">
-          <span class="badge premium">MIEMBRO PREMIUM</span>
-          <span class="badge date">UNIDO EN OCT 2023</span>
+        <div class="etiquetas-usuario">
+          <span class="etiqueta-premium">MIEMBRO PREMIUM</span>
+          <span class="etiqueta-fecha-registro">UNIDO EN OCT 2023</span>
         </div>
       </div>
 
-      <div class="profile-actions">
-        <button class="btn-new">Editar Perfil</button>
-        <button class="btn-white">Exportar Datos</button>
+      <div class="acciones-usuario">
+        <button class="boton-editar-perfil">Editar Perfil</button>
+        <button class="boton-exportar-datos">Exportar Datos</button>
       </div>
 
     </div>
   </section>
 
   <!-- PLAN -->
-  <section class="plan-card">
-    <div class="plan-header">
+  <article class="tarjeta-plan">
+
+    <div class="cabecera-plan">
       <h3>Plan Pro</h3>
       <p>Próxima facturación: 14 nov 2024</p>
     </div>
 
-    <div>
-      <div class="price-row">
-        <span class="amount">$19.99 <small>/mes</small></span>
-        <span class="status-tag">ACTIVO</span>
+    <div class="contenido-plan">
+
+      <div class="precio-plan">
+        <span class="cantidad-plan">
+          19.99€ <small>/mes</small>
+        </span>
+
+        <span class="estado-plan-activo">
+          ACTIVO
+        </span>
       </div>
 
-      <button class="btn-white">Gestionar Suscripción</button>
+      <button class="boton-gestionar-suscripcion">
+        Gestionar Suscripción
+      </button>
+
     </div>
-  </section>
+
+  </article>
 
   <!-- SEGURIDAD -->
-  <section>
-    <div class="box-title">
-      <span class="icon">shield</span>
+  <section class="seccion-seguridad">
+
+    <div class="cabecera-seccion">
+      <span class="icono-seccion">seguridad</span>
       <h3>Seguridad</h3>
     </div>
 
-    <div class="settings-item">
-      <div class="item-text">
+    <div class="item-seguridad">
+      <div class="texto-item-seguridad">
         <strong>Contraseña</strong>
         <p>Cambiada hace 3 meses</p>
       </div>
+
       <span>›</span>
     </div>
 
-    <div class="settings-item">
-      <div class="item-text">
+    <div class="item-seguridad">
+      <div class="texto-item-seguridad">
         <strong>Autenticación de Dos Factores</strong>
         <p>Activada vía Authenticator</p>
       </div>
+
       <input type="checkbox" checked>
     </div>
+
   </section>
 
   <!-- PREFERENCIAS -->
-  <section>
-    <div class="box-title">
-      <span class="icon">payments</span>
+  <section class="seccion-preferencias">
+
+    <div class="cabecera-seccion">
+      <span class="icono-seccion">preferencias</span>
       <h3>Preferencias</h3>
     </div>
 
-    <div class="form-group">
+    <div class="campo-formulario">
       <label>MONEDA PRINCIPAL</label>
+
       <select>
-        <option>USD - Dólar Estadounidense</option>
         <option>EUR - Euro</option>
+        <option>USD - Dólar Estadounidense</option>
+
       </select>
     </div>
 
-    <div class="form-group">
+    <div class="campo-formulario">
       <label>CATEGORÍA POR DEFECTO</label>
+
       <select>
         <option>Inversión General</option>
         <option>Gastos Personales</option>
+         <option>Ingresos Generales</option>
       </select>
     </div>
+
   </section>
 
   <!-- NOTIFICACIONES -->
-  <section>
-    <div class="box-title">
-      <span class="icon">notifications</span>
+  <section class="seccion-notificaciones">
+
+    <div class="cabecera-seccion">
+      <span class="icono-seccion">notificaciones</span>
       <h3>Notificaciones</h3>
     </div>
 
-    <div class="toggle-item">
+    <div class="item-notificacion">
       <span>Notificaciones Push</span>
       <input type="checkbox" checked>
     </div>
 
-    <div class="toggle-item">
+    <div class="item-notificacion">
       <span>Resúmenes por Email</span>
       <input type="checkbox">
     </div>
 
-    <div class="toggle-item">
+    <div class="item-notificacion">
       <span>Alertas de Presupuesto</span>
       <input type="checkbox" checked>
     </div>
+
+     <div class="item-notificacion">
+      <span>Alertas de Objetivos</span>
+      <input type="checkbox" checked>
+    </div>
+
   </section>
 
-  <!-- ZONA INFERIOR -->
-  <section class="danger-zone">
-    <div class="danger-text">
+  <!-- DESACTIVAR CUENTA -->
+  <section class="seccion-desactivar-cuenta">
+
+    <div class="texto-desactivar-cuenta">
       <h3>Desactivación de Cuenta</h3>
+
       <p>
         Una vez eliminada, tus datos financieros no podrán recuperarse.
-        Por favor, haz una copia de seguridad primero.
       </p>
     </div>
 
-    <button class="btn-outline-danger">Eliminar Cuenta</button>
+    <button class="boton-eliminar-cuenta">
+      Eliminar Cuenta
+    </button>
+
   </section>
 
-</div>
+</main>

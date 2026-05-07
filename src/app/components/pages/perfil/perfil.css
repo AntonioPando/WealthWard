@@ -6,303 +6,414 @@
     --primary-container: #131b2e;
     --secondary: #006c49;
     --secondary-container: #6cf8bb;
+
     --bg-light: #f8f9ff;
     --white: #ffffff;
+
     --border-color: #e5e7eb;
+
     --text-main: #0b1c30;
     --text-muted: #64748b;
+
     --error-bg: rgba(255, 218, 214, 0.2);
     --error-border: #ffdad6;
     --error-text: #93000a;
+
+    --sidebar-width: 16vw;
+    --header-height: 6vh;
+
+    --shadow: 0 0.4vh 0.6vh -0.1vh rgba(0, 0, 0, 0.05);
 }
 
+/* =========================================
+   RESET
+   ========================================= */
 * {
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: var(--bg-light);
     color: var(--text-main);
-    margin: 0;
+
+    display: flex;
+    overflow-x: hidden;
 }
 
 /* =========================================
-   GRID
+   SIDEBAR (ajuste layout global)
    ========================================= */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 40px;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: var(--white);
+    border-right: 0.1vw solid var(--border-color);
+
+    z-index: 1000;
 }
 
-section {
+/* =========================================
+   HEADER (si es fijo)
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+
+    width: calc(100% - var(--sidebar-width));
+    height: var(--header-height);
+
     background: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-bottom: 0.1vw solid var(--border-color);
+
+    z-index: 999;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+.contenedor-principal {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+
+    width: calc(100% - var(--sidebar-width));
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+
+    padding: 2vw;
+}
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+section,
+article {
+    background: var(--white);
+    border: 0.08vw solid var(--border-color);
+    border-radius: 1vw;
+    padding: 1.5vw;
+    box-shadow: var(--shadow);
 }
 
 /* =========================================
    PERFIL
    ========================================= */
-.profile-card {
+.tarjeta-perfil {
     grid-column: span 2;
 }
 
-.profile-main-info {
+.contenido-perfil {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 2vw;
 }
 
-.avatar-container {
+.contenedor-avatar {
     position: relative;
 }
 
-.main-avatar {
-    width: 120px;
-    height: 120px;
+.imagen-perfil {
+    width: 8vw;
+    height: 8vw;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.btn-edit-icon {
+.boton-editar-avatar {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 0.3vw;
+    right: 0.3vw;
+
+    width: 2vw;
+    height: 2vw;
+
+    border-radius: 50%;
+    border: none;
+
     background: var(--primary);
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+
     cursor: pointer;
 }
 
-.text-info h2 {
-    margin: 0 0 4px 0;
-    font-size: 2rem;
-}
-
-.text-info p {
+.datos-usuario h2 {
     margin: 0;
+    font-size: 2vw;
+}
+
+.datos-usuario p {
+    margin: 0.2vw 0 0;
     color: var(--text-muted);
+    font-size: 0.9vw;
 }
 
-.badges {
-    margin-top: 15px;
+.etiquetas-usuario {
     display: flex;
-    gap: 10px;
+    gap: 0.8vw;
+    margin-top: 1vw;
+    flex-wrap: wrap;
 }
 
-.badge {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
+.etiqueta-premium {
+    background: var(--secondary-container);
+    color: #005236;
+
+    padding: 0.3vw 0.8vw;
+    border-radius: 10vw;
+
+    font-size: 0.65vw;
     font-weight: 700;
 }
 
-.badge.premium {
-    background: var(--secondary-container);
-    color: #005236;
-}
-
-.badge.date {
+.etiqueta-fecha-registro {
     background: #eff4ff;
     color: var(--text-muted);
+
+    padding: 0.3vw 0.8vw;
+    border-radius: 10vw;
+
+    font-size: 0.65vw;
+    font-weight: 700;
 }
 
-/* 👉 FIX IMPORTANTE (te faltaba) */
-.profile-actions {
+.acciones-usuario {
     margin-left: auto;
     display: flex;
-    gap: 10px;
+    gap: 0.8vw;
 }
 
 /* =========================================
    BOTONES
    ========================================= */
-.btn-new {
-    background: var(--primary);
-    color: white;
+button {
     border: none;
-    padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: 0.5vw;
+
+    padding: 0.8vw 1vw;
+
     font-weight: 600;
+    font-family: inherit;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-.btn-white {
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+button:hover {
+    transform: translateY(-0.1vh);
+    opacity: 0.9;
+}
+
+.boton-editar-perfil {
+    background: var(--primary);
+    color: white;
+}
+
+.boton-exportar-datos,
+.boton-gestionar-suscripcion {
     background: white;
-    font-weight: 600;
-    cursor: pointer;
+    border: 0.08vw solid var(--border-color);
 }
 
 /* =========================================
    PLAN
    ========================================= */
-.plan-card {
+.tarjeta-plan {
     background: var(--primary-container);
     color: white;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.plan-header h3 {
+.cabecera-plan h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6vw;
 }
 
-.plan-header p {
+.cabecera-plan p {
+    font-size: 0.9vw;
     color: #94a3b8;
-    font-size: 0.9rem;
 }
 
-.price-row {
+.contenido-plan {
+    margin-top: 1.5vw;
+}
+
+.precio-plan {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 15px;
+
+    margin-bottom: 1vw;
 }
 
-.amount {
-    font-size: 2rem;
+.cantidad-plan {
+    font-size: 2vw;
     font-weight: 700;
 }
 
-.amount small {
-    font-size: 1rem;
-    font-weight: 400;
+.cantidad-plan small {
+    font-size: 1vw;
     color: #94a3b8;
 }
 
-.status-tag {
+.estado-plan-activo {
     background: var(--secondary-container);
     color: #002113;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 10px;
+
+    padding: 0.2vw 0.5vw;
+    border-radius: 0.3vw;
+
+    font-size: 0.6vw;
     font-weight: 800;
 }
 
 /* =========================================
-   SETTINGS
+   SECCIONES
    ========================================= */
-.box-title {
+.cabecera-seccion {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 0.7vw;
+    margin-bottom: 1.2vw;
 }
 
-.box-title h3 {
+.cabecera-seccion h3 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.2vw;
 }
 
-.settings-item {
+.icono-seccion {
+    font-size: 0.75vw;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   SEGURIDAD
+   ========================================= */
+.item-seguridad {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    border: 1px solid #f1f5f9;
-    border-radius: 12px;
-    margin-bottom: 12px;
+
+    padding: 1vw;
+
+    border: 0.08vw solid #f1f5f9;
+    border-radius: 0.8vw;
+
+    margin-bottom: 1vw;
 }
 
-.item-text strong {
-    display: block;
-    margin-bottom: 2px;
-}
-
-.item-text p {
+.texto-item-seguridad p {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.8vw;
     color: var(--text-muted);
 }
 
-.form-group {
-    margin-bottom: 15px;
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+.campo-formulario {
+    margin-bottom: 1vw;
 }
 
-.form-group label {
-    display: block;
-    font-size: 11px;
+.campo-formulario label {
+    font-size: 0.65vw;
+    color: var(--text-muted);
     font-weight: 700;
-    color: var(--text-muted);
-    margin-bottom: 5px;
+
+    display: block;
+    margin-bottom: 0.4vw;
 }
 
 select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-family: inherit;
-}
+    padding: 0.8vw;
 
-.toggle-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    border: 0.08vw solid var(--border-color);
+    border-radius: 0.5vw;
 }
 
 /* =========================================
-   ZONA PELIGRO
+   NOTIFICACIONES
    ========================================= */
-.danger-zone {
+.item-notificacion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+}
+
+/* =========================================
+   DESACTIVAR CUENTA
+   ========================================= */
+.seccion-desactivar-cuenta {
     grid-column: span 3;
-    background: var(--error-bg);
-    border: 1px solid var(--error-border);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background: var(--error-bg);
+    border: 0.08vw solid var(--error-border);
 }
 
-.danger-text h3 {
+.texto-desactivar-cuenta h3 {
     margin: 0;
     color: var(--error-text);
 }
 
-.danger-text p {
-    margin: 5px 0 0 0;
+.texto-desactivar-cuenta p {
+    margin: 0.5vw 0 0;
     color: var(--error-text);
     opacity: 0.8;
 }
 
-.btn-outline-danger {
+.boton-eliminar-cuenta {
     background: transparent;
-    border: 1px solid var(--error-text);
+    border: 0.08vw solid var(--error-text);
     color: var(--error-text);
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
 }
 
 /* =========================================
-   ICONOS
+   RESPONSIVE
    ========================================= */
-.icon {
-    font-family: 'Material Symbols Outlined';
-    font-size: 20px;
-}
+@media (max-width: 62rem) {
 
-/* =========================================
-   MICRO UX (mejora)
-   ========================================= */
-button {
-    transition: all 0.2s ease;
-}
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+    }
 
-button:hover {
-    transform: translateY(-1px);
-    opacity: 0.9;
+    .tarjeta-perfil,
+    .seccion-desactivar-cuenta {
+        grid-column: span 1;
+    }
+
+    .contenido-perfil {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acciones-usuario {
+        margin-left: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .seccion-desactivar-cuenta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vh;
+    }
 }
