@@ -73,4 +73,32 @@ Movimientos
 
 Dashboard
 
-    
+    public double saldoTotal(int idUsuario){
+
+    }
+
+    public double gastosMensuales(int idUsuario){
+
+    }
+
+    public double ingresosMensuales (int idUsuario){
+
+    }
+
+    public List<Transaccion> listarTransaccionesRecientes (int idUsuario){
+
+    }
+
+    public double[] evolucionGastos(int idUsuario){
+        devuelve en pos 0 el dia y en pos 1 el gasto
+    }
+
+    (
+        public double porcentajeGastoCategoria(int idUsuario){
+            
+        }
+        public String categoria(int idUsuario){
+
+        }
+    )
+

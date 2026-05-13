@@ -64,22 +64,6 @@
   color: var(--accent);
 }
 
-.indicador-tendencia {
-  font-size: 12px;
-  padding: 6px 8px;
-  border-radius: 999px;
-  color: #fff;
-}
-.indicador-tendencia--positivo {
-  background: var(--accent);
-}
-.indicador-tendencia--negativo {
-  background: var(--danger);
-}
-.indicador-tendencia--neutro {
-  background: #6b7280;
-}
-
 .tarjeta-kpi__titulo {
   font-size: 13px;
   color: var(--muted);

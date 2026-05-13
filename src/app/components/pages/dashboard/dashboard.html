@@ -1,5 +1,10 @@
-<!-- Área de Contenido Principal -->
-<main class="contenedor-principal">
+<app-header></app-header>
+
+<div class="pagina-dashboard">
+  <app-menu-lateral></app-menu-lateral>
+
+  <!-- Área de Contenido Principal -->
+  <main class="contenedor-principal">
   <!-- Sección: Indicadores Clave de Rendimiento (KPIs) -->
   <section class="rejilla-kpi" aria-label="Resumen financiero rápido">
     <!-- Tarjeta KPI: Saldo -->
@@ -8,7 +13,7 @@
         <div class="tarjeta-kpi__icono-contenedor tarjeta-kpi__icono-contenedor--primario">
           <span class="material-symbols-outlined">account_balance</span>
         </div>
-        <span class="indicador-tendencia indicador-tendencia--positivo">+2.4%</span>
+
       </header>
       <div class="tarjeta-kpi__contenido">
         <h3 class="tarjeta-kpi__titulo">Saldo Total</h3>
@@ -23,7 +28,7 @@
         <div class="tarjeta-kpi__icono-contenedor tarjeta-kpi__icono-contenedor--alerta">
           <span class="material-symbols-outlined">shopping_cart</span>
         </div>
-        <span class="indicador-tendencia indicador-tendencia--negativo">-12%</span>
+
       </header>
       <div class="tarjeta-kpi__contenido">
         <h3 class="tarjeta-kpi__titulo">Gastos Mensuales</h3>
@@ -46,7 +51,7 @@
         <div class="tarjeta-kpi__icono-contenedor tarjeta-kpi__icono-contenedor--exito">
           <span class="material-symbols-outlined">payments</span>
         </div>
-        <span class="indicador-tendencia indicador-tendencia--neutro">Al día</span>
+
       </header>
       <div class="tarjeta-kpi__contenido">
         <h3 class="tarjeta-kpi__titulo">Ingresos Mensuales</h3>
@@ -65,10 +70,7 @@
           <h3 class="panel-grafico__titulo">Evolución de Gastos</h3>
           <p class="panel-grafico__subtitulo">Vista general de gastos diarios en octubre</p>
         </div>
-        <select class="selector-periodo">
-          <option>Últimos 30 días</option>
-          <option>Últimos 3 meses</option>
-        </select>
+        <p class="selector-periodo">Últimos 30 días</p>
       </header>
       <div class="visualizacion-barras">
         <!-- Las barras se generan dinámicamente o vía CSS -->
@@ -184,4 +186,5 @@
       <!-- ... más transacciones -->
     </div>
   </section>
-</main>
+  </main>
+</div>
