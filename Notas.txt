@@ -43,6 +43,23 @@ Perfil
         
     }
 
+Para el botón "Actualizar >" en la sección de contraseña
+public boolean cambiarPassword(int idUsuario, String passwordAntigua, String passwordNueva) throws UsuarioException {
+    1. Verificar passwordAntigua
+     2. Hashear passwordNueva
+     3. Actualizar fechaUltimoCambioPassword
+}
+
+para cargar el usuario
+public Usuario obtenerPerfil(int idUsuario) {
+    // Retorna la entidad o un DTO con la info de la imagen
+}
+
+Para el icono de edición sobre el círculo del avatar:
+public String actualizarFotoPerfil(int idUsuario, byte[] imagen) {
+    // Guardar imagen en servidor/S3 y devolver la URL
+}
+
 Movimientos
 
     public List<Transaccion> listarTransacciones (int idUsuario, Date fechaInicio, Date fechaFin, Integer idCategoria, Boolean tipo, Double cantidad, String descripcion){
